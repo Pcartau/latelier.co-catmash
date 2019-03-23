@@ -1,0 +1,33 @@
+{
+  "name": "latelier.co-catmash",
+  "version": "1.0.0",
+  "description": "A web application that can find the cutest cat",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pcartau/latelier.co-catmash.git"
+  },
+  "keywords": [
+    "Cat",
+    "Facesmash",
+    "latelier.co"
+  ],
+  "author": "pcartau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pcartau/latelier.co-catmash/issues"
+  },
+  "homepage": "https://github.com/Pcartau/latelier.co-catmash#readme",
+  "devDependencies": {
+    "eslint": "^5.15.3"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "pug": "^2.0.3",
+    "request": "^2.88.0"
+  }
+}
