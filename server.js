@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 
 /*---------------------------DATABASE-------------------------------------*/
 
-require(`${process.env.PWD}/src/CatMongoose.js`)
+require(`${process.env.PWD}/src/Cat.js`)
 mongoose.connect('mongodb://localhost:27017/latelier', {
     useNewUrlParser: true
   });
