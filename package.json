@@ -4,7 +4,7 @@
   "description": "A web application that can find the cutest cat",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nodemon --exec 'mocha -R min tests/mongodb/login_test.js'",
     "start": "node server.js"
   },
   "repository": {

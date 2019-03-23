@@ -8,10 +8,10 @@ const mongoose = require('mongoose');
 
 /*---------------------------DATABASE-------------------------------------*/
 
-require(`${process.env.PWD}/src/Cat.js`)
+const Cat = require(`${process.env.PWD}/src/Cat.js`)
 mongoose.connect('mongodb://localhost:27017/latelier', {
-    useNewUrlParser: true
-  });
+  useNewUrlParser: true
+});
 
 /*---------------------------MIDDLEWARES--------------------------------------*/
 app.set('view engine', 'pug');
