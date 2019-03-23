@@ -8,17 +8,10 @@ const mongoose = require('mongoose');
 
 /*---------------------------DATABASE-------------------------------------*/
 
+require(`${process.env.PWD}/src/CatMongoose.js`)
 mongoose.connect('mongodb://localhost:27017/latelier', {
-  useNewUrlParser: true
-});
-
-var CatSchema = new mongoose.Schema({
-  cat_id: { type: String, unique:true },
-  cat_url: String,
-  cat_votes: Number
-});
-
-var Cat = mongoose.model('Cat', CatSchema);
+    useNewUrlParser: true
+  });
 
 /*---------------------------MIDDLEWARES--------------------------------------*/
 app.set('view engine', 'pug');
