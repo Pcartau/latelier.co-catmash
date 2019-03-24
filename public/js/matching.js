@@ -27,12 +27,22 @@ function rematch() {
   cat2.appendChild(cat2_img);
 }
 
+/*---------------------------SEND-VOTE-TO-SERVER------------------------------*/
+var xhttp = new XMLHttpRequest();
+function sendVote(cat) {
+  xhttp.open("POST", "/vote", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(cat);
+}
+
 
 /*---------------------------EVENTS-ON-IMGS---------------------------------*/
 cat1.addEventListener('click', function() {
+  sendVote(`cat1=true&id=${catsData[catsMatchs[randomMatch].split(':')[0]].cat_id}`);
   rematch();
 });
 
 cat2.addEventListener('click', function() {
+  sendVote(`cat2=true&id=${catsData[catsMatchs[randomMatch].split(':')[1]].cat_id}`);
   rematch();
 });

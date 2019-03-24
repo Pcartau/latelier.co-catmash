@@ -20,6 +20,14 @@ module.exports = function(app) {
     });
   });
 
+  app.post('/vote', (req, res) => {
+    if (req.body.cat1 == "true") {
+      console.log(`Un point pour le chat 1 (id = ${req.body.id})`);
+    } else if (req.body.cat2 == "true") {
+      console.log(`Un point pour le chat 2 (id = ${req.body.id})`);
+    }
+  });
+
   app.get('*', function(req, res, next) {
     setImmediate(() => { next(new Error(`La page demandée n'existe pas`)); });
   });
