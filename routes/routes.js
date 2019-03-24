@@ -1,5 +1,5 @@
 const CatModel = require(`${process.env.PWD}/src/Cat.js`);
-const Cat = require(`${process.env.PWD}/src/GivePoint.js`)
+const Cat = require(`${process.env.PWD}/src/CatUtils.js`);
 
 module.exports = function(app) {
   app.get('/', (req, res) => {
@@ -15,7 +15,7 @@ module.exports = function(app) {
   app.get('/ranking', (req, res) => {
     CatModel.find(function (err, catsData) {
       res.render("ranking", {
-        catsData: catsData,
+        catsData: JSON.stringify(catsData),
         json: true
       });
     });

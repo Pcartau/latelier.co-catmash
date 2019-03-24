@@ -6,11 +6,7 @@ html(dir='ltr', lang='en')
     link(rel='stylesheet', href='css/ranking.css')
   body
     h1 Ranking
-  mixin print_cat(cat)
-      img.cat_img(src=cat.cat_url)
-      p.cat_score= cat.cat_votes
-      |
-      br
-      |
-  for cat in catsData
-    +print_cat(cat)
+    .img_container
+  script.
+    catsData="#{catsData}"
+  script(src='js/ranking.js')
