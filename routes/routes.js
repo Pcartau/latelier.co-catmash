@@ -1,10 +1,23 @@
+const Cat = require(`${process.env.PWD}/src/Cat.js`);
+
 module.exports = function(app) {
   app.get('/', (req, res) => {
-    res.render("index");
+    Cat.find(function (err, catsData) {
+      res.render("index", {
+        catsMAtchs: catsMatchs,
+        catsData: JSON.stringify(catsData),
+        json: true
+      });
+    });
   });
 
   app.get('/ranking', (req, res) => {
-    res.render("ranking");
+    Cat.find(function (err, catsData) {
+      res.render("ranking", {
+        catsData: catsData,
+        json: true
+      });
+    });
   });
 
   app.get('*', function(req, res, next) {

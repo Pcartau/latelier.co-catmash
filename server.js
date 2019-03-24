@@ -6,10 +6,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require(`${process.env.PWD}/src/Global.js`);
 
+
 /*---------------------------DATABASE-------------------------------------*/
 mongoose.connect('mongodb://localhost:27017/latelier', {
   useNewUrlParser: true
 });
+
 
 /*---------------------------MIDDLEWARES--------------------------------------*/
 app.set('view engine', 'pug');
