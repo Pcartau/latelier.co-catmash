@@ -4,11 +4,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
+require(`${process.env.PWD}/src/Global.js`);
 
 /*---------------------------DATABASE-------------------------------------*/
-
-const Cat = require(`${process.env.PWD}/src/Cat.js`)
 mongoose.connect('mongodb://localhost:27017/latelier', {
   useNewUrlParser: true
 });
@@ -30,6 +28,10 @@ app.use(function(error, req, res, next) {
     message: error.message
   });
 });
+
+
+/*---------------------------REQUEST------------------------------------------*/
+require(`${process.env.PWD}/src/Request.js`);
 
 
 /*---------------------------SERVER-------------------------------------------*/
