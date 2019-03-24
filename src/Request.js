@@ -9,7 +9,7 @@ function fillDataBase() {
     var newCat = new Cat({
       cat_id: cat.id,
       cat_url: cat.url,
-      cat_score: 0
+      cat_votes: 0
     });
     newCat.save(function (err) {
       if (err) return console.error(err);
