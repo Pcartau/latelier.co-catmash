@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/latelier', {
   useNewUrlParser: true
 });
+
 mongoose.connection
     .once('open', () => console.log('Connected!'))
     .on('error', (error) => {

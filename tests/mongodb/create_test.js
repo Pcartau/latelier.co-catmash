@@ -9,7 +9,7 @@ describe('Creating documents', () => {
         });
         cat.save()
           .then(() => {
-            assert(!poke.isNew);
+            assert(!cat.isNew);
             done();
           });
     });
