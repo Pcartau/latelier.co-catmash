@@ -67,5 +67,23 @@ body {
   width: 18%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);``
+  transform: translate(-50%, -50%);
+}
+.goRanking {
+  position: absolute;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  bottom: 10%;
+  left: 50%;
+  transition: 0.5s background-color ease;
+  text-decoration: none;
+  background-color: #fc80ff;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Lato';
+  font-size: 1.8vw;
+}
+.goRanking:hover {
+  background-color: #f445ff;
 }
