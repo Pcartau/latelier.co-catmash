@@ -16,3 +16,6 @@ mongo-data/
 
 # eslint
 .eslintrc.json
+
+#Mongo
+mongoPass.js

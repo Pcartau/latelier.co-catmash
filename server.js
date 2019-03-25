@@ -1,14 +1,17 @@
 /*---------------------------REQUIREMENTS-------------------------------------*/
-const port = process.env.PORT || 25566;
+const port = process.env.PORT || 8080;
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require(`${process.env.PWD}/src/Global.js`);
 
-
 /*---------------------------DATABASE-------------------------------------*/
-mongoose.connect('mongodb://localhost:27017/latelier', {
+
+let password = require(`${process.env.PWD}/src/mongoPass.js`);
+let uri = `mongodb+srv://admin:${password}@cluster0-2fmt7.gcp.mongodb.net/test?retryWrites=true`;
+
+mongoose.connect(uri, {
   useNewUrlParser: true
 });
 
