@@ -1,3 +1,7 @@
+/*---------------------------AOS-LIB-INIT-------------------------------------*/
+
+AOS.init();
+
 /*---------------------------DOM-CREATION------------------------------------*/
 var catsData = JSON.parse(catsData.replace(/&quot;/g,'"'));
 var cat1 = document.getElementById("cat1");
@@ -19,6 +23,7 @@ cat2.appendChild(cat2_img);
 
 /*---------------------------REMATCH-FUNCTION---------------------------------*/
 function rematch() {
+  cat1_img.style.opacity = 0;
   catsMatchs.splice(randomMatch, 1); //Retrait du match
   randomMatch = Math.floor(Math.random() * catsMatchs.length);
   cat1_img.src = catsData[catsMatchs[randomMatch].split(':')[0]].cat_url;

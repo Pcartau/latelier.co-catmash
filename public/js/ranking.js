@@ -1,3 +1,4 @@
+/*---------------------------DOM-CREATION------------------------------------*/
 const img_container = document.getElementsByClassName('img_container')[0];
 var catsData = JSON.parse(catsData.replace(/&quot;/g,'"'));
 var catRank = 1;
