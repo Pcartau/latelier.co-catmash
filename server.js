@@ -8,7 +8,7 @@ require(`${process.env.PWD}/src/Global.js`);
 
 /*---------------------------DATABASE-------------------------------------*/
 
-let password = require(`${process.env.PWD}/src/mongoPass.js`);
+let password = process.env.MONGO_PASS || require(`${process.env.PWD}/src/mongoPass.js`);
 let uri = `mongodb+srv://admin:${password}@cluster0-2fmt7.gcp.mongodb.net/test?retryWrites=true`;
 
 mongoose.connect(uri, {
