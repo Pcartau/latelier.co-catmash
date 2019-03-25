@@ -2,14 +2,21 @@ doctype html
 html(dir='ltr', lang='en')
   head
     meta(charset='utf-8')
-    title CatMash - Ranking
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='icon', type="image/png", href='icon.png')
     link(rel='stylesheet', href='css/index.css')
+    link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Chango', rel='stylesheet')
+    title CatMash - Ranking
   body
-    h1 Welcome to CatMash
+    h1.page_title Welcome to CatMash
+    h2.description Choose the cat you prefer by clicking on it
   script.
     catsMatchs="#{catsMatchs}"
     catsData="#{catsData}"
-  .container
-    #cat1.img_container
-    #cat2.img_container
+  img(src="imgs/catPow.png", alt="catPow", class="catPow")
+  .container.left
+    #cat1.img_container.img_left
+  .container.right
+    #cat2.img_container.img_right
   script(src='js/matching.js')
