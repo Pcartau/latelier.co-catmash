@@ -39,10 +39,10 @@ body {
    right: 0;
 }
 .img_left {
-    border: solid 3px white;
+    border: solid 3px #ffcdb9;
 }
 .img_right {
-  border: solid 3px white;
+  border: solid 3px #ffcdb9;
 }
 .img_container {
   width: 28vw;
@@ -77,13 +77,13 @@ body {
   left: 50%;
   transition: 0.5s background-color ease;
   text-decoration: none;
-  background-color: #fc80ff;
+  background-color: #ff8e98;
   padding: 10px;
   border-radius: 5px;
   color: white;
-  font-family: 'Lato';
-  font-size: 1.8vw;
+  font-family: 'Chango';
+  font-size: 1.5vw;
 }
 .goRanking:hover {
-  background-color: #f445ff;
+  background-color: #ff6e7b;
 }
