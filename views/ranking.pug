@@ -2,11 +2,17 @@ doctype html
 html(dir='ltr', lang='en')
   head
     meta(charset='utf-8')
-    title CatMash - Ranking
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='icon', type="image/png", href='icon.png')
     link(rel='stylesheet', href='css/ranking.css')
+    link(href='https://fonts.googleapis.com/css?family=Chango', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet')
+    title CatMash - Ranking
   body
-    h1 Ranking
+    h1.page_title Ranking
     .img_container
+    .rank_container
+    .votes_container
   script.
     catsData="#{catsData}"
   script(src='js/ranking.js')
