@@ -1,11 +1,11 @@
 body {
-      background-image: linear-gradient(to right, #ff7682, #ff7497, #ff75af, #ff79c9, #ff80e3);
+      background-image: linear-gradient(to right, #ff3939, #ff4345, #ff4c51, #ff555b, #ff5e66, #ff6173, #ff647f, #ff688b, #ff699d, #ff6cb1, #ff71c5, #ff78d9);
 }
 * {
   box-sizing: border-box;
 }
 .page_title {
-  font-family: 'Chango';
+  font-family: 'Signika Negative';
   position: absolute;
   z-index: 1;
   left: 50%;
@@ -22,7 +22,7 @@ body {
   top: 13%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 2vw;
+  font-size: 1.1vw;
 }
 .container {
   height: 100%;
@@ -81,7 +81,7 @@ body {
   padding: 10px;
   border-radius: 5px;
   color: white;
-  font-family: 'Chango';
+  font-family: 'Signika Negative';
   font-size: 1.5vw;
 }
 .goRanking:hover {
