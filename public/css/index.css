@@ -57,6 +57,7 @@ body {
 .img_container img {
   width: 100%;
   height: 100%;
+  transition: opacity 1s;
 }
 .img_container:hover {
   border-color: #FF397F;

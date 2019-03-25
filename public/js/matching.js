@@ -1,7 +1,3 @@
-/*---------------------------AOS-LIB-INIT-------------------------------------*/
-
-AOS.init();
-
 /*---------------------------DOM-CREATION------------------------------------*/
 var catsData = JSON.parse(catsData.replace(/&quot;/g,'"'));
 var cat1 = document.getElementById("cat1");
