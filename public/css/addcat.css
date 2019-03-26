@@ -19,9 +19,9 @@ input {
   position: absolute;
   color: white;
   font-family: 'Lato';
-  font-size: 2.5vw;
+  font-size: 1.1vw;
   left: 50%;
-  top: 25%;
+  top: 30%;
   transform: translate(-50%, -50%);
 }
 .inputSubmit:hover {
@@ -29,12 +29,11 @@ input {
 }
 .form_container {
   position: absolute;
-  width: 50vh;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  display: inline-grid;
 }
 .page_title {
   font-family: 'Signika Negative';
@@ -54,5 +53,5 @@ input {
   top: 13%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 1.1vw;
+  font-size: 2.3vw;
 }
