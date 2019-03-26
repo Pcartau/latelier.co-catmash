@@ -13,14 +13,17 @@ const classifier = ml5.imageClassifier('MobileNet', function() {
 
 /*---------------------------IMG-PREDICTION-----------------------------------*/
 function predictImg(image) {
+  resultList = "";
   classifier.predict(image, function(err, results) {
     for (let result of results) {
       resultList = resultList + " " + result.className;
     }
+    if (resultList.search("Cat") >= 0 || resultList.search("cat") >= 0) {
+      result.innerHTML = "Thanks ! Your cat is being added :D";
+    } else {
+      result.innerHTML = "Sorry, we can't see the cat :/ We saw :" + resultList;
+    }
   });
-  if (resultList.search("Cat") >= 0 || resultList.search("cat") >= 0) {
-    console.log("Found a cat !");
-  }
 }
 
 
@@ -55,7 +58,6 @@ submit_button.addEventListener('click', function(){
         predictImg(image);
       }, 1000);
     } else {
-      result.style.color = "red";
       result.innerHTML = "Not a valid URL";
     }
   });
