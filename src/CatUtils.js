@@ -10,4 +10,15 @@ function givePoint(id) {
   });
 }
 
+function createMatchs(cats_number) {
+  var catsMatchs = [];
+  for (let i = 0; i < cats_number; i++) {
+    for (let j = i + 1; j < cats_number; j++) {
+      catsMatchs.push(i + ":" + j);
+    }
+  }
+  return (catsMatchs);
+}
+
 module.exports.givePoint = givePoint;
+module.exports.createMatchs = createMatchs;
