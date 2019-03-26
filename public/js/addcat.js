@@ -14,6 +14,7 @@ const classifier = ml5.imageClassifier('MobileNet', function() {
 /*---------------------------IMG-PREDICTION-----------------------------------*/
 function predictImg(image) {
   resultList = "";
+  console.log(image);
   classifier.predict(image, function(err, results) {
     for (let result of results) {
       resultList = resultList + " " + result.className;
@@ -56,6 +57,8 @@ submit_button.addEventListener('click', function(){
   testUrl(url.value, function(exists) {
     if (exists == true) {
       image.src = url.value;
+      image.setAttribute("width", "250px");
+      image.setAttribute("height", "250px");
       setTimeout(() => {
         predictImg(image);
       }, 1000);
