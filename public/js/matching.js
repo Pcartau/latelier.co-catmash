@@ -22,19 +22,23 @@ function rematch() {
   cat1.style.opacity = 0;
   cat2.style.opacity = 0;
   catsMatchs.splice(randomMatch, 1); //Retrait du match
-  randomMatch = Math.floor(Math.random() * catsMatchs.length);
+  if (catMatchs.length) {
+    randomMatch = Math.floor(Math.random() * catsMatchs.length);
 
-  setTimeout(() => {
-    cat1_img.src = catsData[catsMatchs[randomMatch].split(':')[0]].cat_url;
-    cat2_img.src = catsData[catsMatchs[randomMatch].split(':')[1]].cat_url;
-    cat1.appendChild(cat1_img);
-    cat2.appendChild(cat2_img);
-  }, 300);
+    setTimeout(() => {
+      cat1_img.src = catsData[catsMatchs[randomMatch].split(':')[0]].cat_url;
+      cat2_img.src = catsData[catsMatchs[randomMatch].split(':')[1]].cat_url;
+      cat1.appendChild(cat1_img);
+      cat2.appendChild(cat2_img);
+    }, 300);
 
-  setTimeout(() => {
-    cat1.style.opacity = 1;
-    cat2.style.opacity = 1;
-  }, 450);
+    setTimeout(() => {
+      cat1.style.opacity = 1;
+      cat2.style.opacity = 1;
+    }, 450);
+  } else {
+    window.location.reload(false);   
+  }
 }
 
 /*---------------------------SEND-VOTE-TO-SERVER------------------------------*/
