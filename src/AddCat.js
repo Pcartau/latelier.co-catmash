@@ -14,7 +14,6 @@ function makeId(length) {
 
 
 /*---------------------------TEST-FOR-ID--------------------------------------*/
-
 function testId(id) {
   return Cat.findOne({ 'cat_id': id })
   .then((cat) => {
@@ -26,17 +25,19 @@ function testId(id) {
   })
 }
 
+
 /*---------------------------TEST-FOR-ID--------------------------------------*/
 function createCat(id, url) {
   var newCat = new Cat({
-    cat_id: cat.id,
-    cat_url: cat.url,
+    cat_id: id,
+    cat_url: url,
     cat_votes: 0
   });
   newCat.save(function (err) {
     if (err) return console.error(err);
   });
 }
+
 
 /*---------------------------ADD-CAT-TO_DB------------------------------------*/
 async function add(url) {
@@ -48,7 +49,8 @@ async function add(url) {
       randomId = makeId(16);
       checkId = await testId(randomId);
     }
-    // createCat(randomId, url);
+    console.log(url, randomId);
+    createCat(randomId, url);
   } else {
     return ("Not valid image");
   }
