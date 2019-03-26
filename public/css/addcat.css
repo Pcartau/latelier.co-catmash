@@ -55,3 +55,13 @@ input {
   color: white;
   font-size: 2.3vw;
 }
+.result {
+  font-family: 'Signika Negative';
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2vw;
+}
