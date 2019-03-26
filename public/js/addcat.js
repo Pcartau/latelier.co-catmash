@@ -19,7 +19,8 @@ function predictImg(image) {
       resultList = resultList + " " + result.className;
     }
     if (resultList.search("Cat") >= 0 || resultList.search("cat") >= 0) {
-      result.innerHTML = "Thanks ! Your cat is being added :D";
+      result.innerHTML = "Thanks ! Your cat is being added !";
+      sendCat(url.value);
     } else {
       result.innerHTML = "Sorry, we can't see the cat :/ We saw :" + resultList;
     }
@@ -42,15 +43,16 @@ function testUrl(url, callback) {
 
 /*---------------------------SEND-VOTE-TO-SERVER------------------------------*/
 var xhttp = new XMLHttpRequest();
-// function sendVote(cat) {
-//   xhttp.open("POST", "/vote", true);
-//   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//   xhttp.send(cat);
-// }
+function sendCat(url) {
+  xhttp.open("POST", "/newCat", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(`cat_url=${url}`);
+}
 
 
 /*---------------------------EVENT_LISTENER-----------------------------------*/
 submit_button.addEventListener('click', function(){
+  result.innerHTML = "";
   testUrl(url.value, function(exists) {
     if (exists == true) {
       image.src = url.value;

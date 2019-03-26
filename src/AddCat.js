@@ -49,7 +49,6 @@ async function add(url) {
       randomId = makeId(16);
       checkId = await testId(randomId);
     }
-    console.log(url, randomId);
     createCat(randomId, url);
   } else {
     return ("Not valid image");
