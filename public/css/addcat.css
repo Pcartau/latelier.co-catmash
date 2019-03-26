@@ -24,6 +24,15 @@ input {
   top: 30%;
   transform: translate(-50%, -50%);
 }
+.warning {
+  position: absolute;
+  color: white;
+  font-family: 'Lato';
+  font-size: 1.1vw;
+  left: 50%;
+  top: 36%;
+  transform: translate(-50%, -50%);
+}
 .inputSubmit:hover {
   background: linear-gradient(to right, #b70000, #590059);
 }
