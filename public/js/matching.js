@@ -16,7 +16,6 @@ cat1.appendChild(cat1_img);
 cat2_img.src = catsData[catsMatchs[randomMatch].split(':')[1]].cat_url;
 cat2.appendChild(cat2_img);
 
-
 /*---------------------------REMATCH-FUNCTION---------------------------------*/
 function rematch() {
   cat1.style.opacity = 0;
