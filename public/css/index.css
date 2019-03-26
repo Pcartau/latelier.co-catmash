@@ -93,3 +93,21 @@ body {
 .goRanking:hover {
   background-color: #ff6e7b;
 }
+.goAddCat {
+  position: absolute;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  bottom: 0%;
+  left: 50%;
+  transition: 0.5s background-color ease;
+  text-decoration: none;
+  background-color: #ff8e98;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Signika Negative';
+  font-size: 1.5vw;
+}
+.goAddCat:hover {
+  background-color: #ff6e7b;
+}
