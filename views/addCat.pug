@@ -11,3 +11,7 @@ html(dir='ltr', lang='en')
   body
     h1.page_title You can add your cat
     h2.description Just fill theses informations
+    form(action='/addCat')
+        input(type='text', name='cat_id', placeholder="Cat ID")
+        input(type='text', name='cat_url', placeholder="http://example/cat_picture.jpg")
+        input(type='submit', value='Submit')

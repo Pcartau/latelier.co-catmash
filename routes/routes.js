@@ -4,7 +4,7 @@ const Cat = require(`${process.env.PWD}/src/CatUtils.js`);
 module.exports = function(app) {
   app.get('/', (req, res) => {
     CatModel.find(function (err, catsData) {
-      res.render("index", {
+      res.render('index', {
         catsMAtchs: catsMatchs,
         catsData: JSON.stringify(catsData),
         json: true
@@ -14,12 +14,16 @@ module.exports = function(app) {
 
   app.get('/ranking', (req, res) => {
     CatModel.find(function (err, catsData) {
-      res.render("ranking", {
+      res.render('ranking', {
         catsData: JSON.stringify(catsData),
         json: true
       });
     });
   });
+
+  app.get('/addcat', (req, res) => {
+    res.render('addCat');
+  })
 
   app.post('/vote', (req, res) => {
       Cat.givePoint(req.body.id);
