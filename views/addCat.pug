@@ -14,5 +14,5 @@ html(dir='ltr', lang='en')
     p.cat_url_desc URL of your cat's picture
     .form_container
       form(action='/newCat', method="post")
-          input(type='text', name='cat_url', placeholder="http://example/cat_picture.jpg")
+          input(type='url', name='cat_url', required="true", placeholder="http://example/cat_picture.jpg")
           input(type='submit', value='Submit', class="inputSubmit")

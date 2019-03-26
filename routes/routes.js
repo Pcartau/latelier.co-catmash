@@ -27,10 +27,8 @@ module.exports = function(app) {
   })
 
   app.post('/newCat', (req, res) => {
-    if (req.body) {
-      NewCat.add(req.body);
-    } else {
-      res.send("Erreur");
+    if (req.body.cat_url) {
+      NewCat.add(req.body.cat_url);
     }
   });
 
