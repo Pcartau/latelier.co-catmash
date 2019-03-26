@@ -4,14 +4,15 @@ html(dir='ltr', lang='en')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='icon', type="image/png", href='icon.png')
-    link(rel='stylesheet', href='css/index.css')
+    link(rel='stylesheet', href='css/addcat.css')
     link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Signika Negative', rel='stylesheet')
     title CatMash - Add a cat
   body
     h1.page_title You can add your cat
     h2.description Just fill theses informations
-    form(action='/addCat')
-        input(type='text', name='cat_id', placeholder="Cat ID")
-        input(type='text', name='cat_url', placeholder="http://example/cat_picture.jpg")
-        input(type='submit', value='Submit')
+    p.cat_url_desc URL of your cat's picture
+    .form_container
+      form(action='/addCat')
+          input(type='text', name='cat_url', placeholder="http://example/cat_picture.jpg")
+          input(type='submit', value='Submit', class="inputSubmit")
