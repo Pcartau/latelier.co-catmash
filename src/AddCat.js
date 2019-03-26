@@ -12,27 +12,43 @@ function makeId(length) {
   return text;
 }
 
+
 /*---------------------------TEST-FOR-ID--------------------------------------*/
 
 function testId(id) {
-  Cat.findOne({ 'cat_id': id }, function (err, cat) {
-    if (err) return (handleError(err));
+  return Cat.findOne({ 'cat_id': id })
+  .then((cat) => {
     if (!cat) {
-      console.log("Pas de chat av cet ID");
+      return (true);
     } else {
-      console.log(cat);
+      return (false);
     }
+  })
+}
+
+/*---------------------------TEST-FOR-ID--------------------------------------*/
+function createCat(id, url) {
+  var newCat = new Cat({
+    cat_id: cat.id,
+    cat_url: cat.url,
+    cat_votes: 0
+  });
+  newCat.save(function (err) {
+    if (err) return console.error(err);
   });
 }
 
-
 /*---------------------------ADD-CAT-TO_DB------------------------------------*/
-function add(url) {
+async function add(url) {
   var validImg = /([a-zA-Z0-9\s_\\.\-\(\/):])+\.(gif|jpg|jpeg|tiff|png|svg)/g;
   if (validImg.test(url)) {
-    let randomId = makeId(10);
-    console.log(randomId);
-    testId("tt");
+    let randomId = makeId(16);
+    var checkId = await testId(randomId);
+    while (checkId == false) {
+      randomId = makeId(16);
+      checkId = await testId(randomId);
+    }
+    // createCat(randomId, url);
   } else {
     return ("Not valid image");
   }
