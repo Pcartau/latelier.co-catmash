@@ -1,20 +1,20 @@
 /*---------------------------DOM-CREATION------------------------------------*/
 const url = document.getElementById("img_url");
-const image = document.getElementById("img");
 const result = document.getElementsByClassName("result")[0];
 var submit_button = document.getElementById("submit");
 var resultList = "";
+var imgWidth = "";
+var imgHeight = "";
+var image = document.getElementById("img");
 
 /*---------------------------ML5-INIT-----------------------------------------*/
 const classifier = ml5.imageClassifier('MobileNet', function() {
   console.log('Model Loaded!');
 });
 
-
 /*---------------------------IMG-PREDICTION-----------------------------------*/
 function predictImg(image) {
   resultList = "";
-  console.log(image);
   classifier.predict(image, function(err, results) {
     for (let result of results) {
       resultList = resultList + " " + result.className;
@@ -33,6 +33,8 @@ function predictImg(image) {
 function testUrl(url, callback) {
   var img = new Image();
   img.onload = function() {
+    imgWidth = this.width;
+    imgHeight = this.height;
     callback(true);
   };
   img.onerror = function() {
@@ -56,9 +58,10 @@ submit_button.addEventListener('click', function(){
   result.innerHTML = "";
   testUrl(url.value, function(exists) {
     if (exists == true) {
+      image.crossOrigin="anonymous";
       image.src = url.value;
-      image.setAttribute("width", "250px");
-      image.setAttribute("height", "250px");
+      image.setAttribute("width", `${imgWidth}px`);
+      image.setAttribute("height", `${imgHeight}px`);
       setTimeout(() => {
         predictImg(image);
       }, 1000);
