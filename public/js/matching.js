@@ -22,7 +22,7 @@ function rematch() {
   cat1.style.opacity = 0;
   cat2.style.opacity = 0;
   catsMatchs.splice(randomMatch, 1); //Retrait du match
-  if (catMatchs.length) {
+  if (catsMatchs.length) {
     randomMatch = Math.floor(Math.random() * catsMatchs.length);
 
     setTimeout(() => {
