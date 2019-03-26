@@ -65,3 +65,6 @@ input {
   color: white;
   font-size: 2vw;
 }
+.no-display {
+  display: none;
+}
