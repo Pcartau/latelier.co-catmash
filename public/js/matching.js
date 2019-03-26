@@ -37,7 +37,7 @@ function rematch() {
       cat2.style.opacity = 1;
     }, 450);
   } else {
-    window.location.reload(false);   
+    window.location.reload(false);
   }
 }
 
