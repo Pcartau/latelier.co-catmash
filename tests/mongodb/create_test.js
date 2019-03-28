@@ -1,4 +1,5 @@
 const Cat = require('../../src/Cat.js');
+const mongoose = require('mongoose');
 
 describe('Creating documents', () => {
     it('Create a Cat', (done) => {
@@ -6,15 +7,14 @@ describe('Creating documents', () => {
         useNewUrlParser: true
       }).then(() => {
         const cat = new Cat({
-          cat_id: "sa3432",
+          cat_id: "choose_right_id",
           cat_url: "http://www.test.fr",
           cat_votes: 0
         });
         cat.save()
           .then(() => {
-            assert(!cat.isNew);
             done();
           });
-      })        
+      })
     });
 });
