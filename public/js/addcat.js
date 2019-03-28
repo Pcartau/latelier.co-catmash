@@ -12,18 +12,23 @@ const classifier = ml5.imageClassifier('MobileNet', function() {
   console.log('Model Loaded!');
 });
 
+
 /*---------------------------IMG-PREDICTION-----------------------------------*/
 function predictImg(image) {
   resultList = "";
   classifier.predict(image, function(err, results) {
-    for (let result of results) {
-      resultList = resultList + " " + result.className;
-    }
-    if (resultList.search("Cat") >= 0 || resultList.search("cat") >= 0) {
-      result.innerHTML = "Thanks ! Your cat is being added !";
-      sendCat(url.value);
+    if (err) {
+      result.innerHTML = "Sorry, there is an error : " + err;
     } else {
-      result.innerHTML = "Sorry, we can't see the cat :/ We saw :" + resultList;
+      for (let result of results) {
+        resultList = resultList + " " + result.className;
+      }
+      if (resultList.search("Cat") >= 0 || resultList.search("cat") >= 0) {
+        result.innerHTML = "Thanks ! Your cat is being added !";
+        sendCat(url.value);
+      } else {
+        result.innerHTML = "Sorry, we can't see the cat :/ We saw :" + resultList;
+      }
     }
   });
 }
@@ -32,6 +37,7 @@ function predictImg(image) {
 /*---------------------------CHECK-URL----------------------------------------*/
 function testUrl(url, callback) {
   var img = new Image();
+  img.src = url;
   img.onload = function() {
     imgWidth = this.width;
     imgHeight = this.height;
@@ -40,7 +46,6 @@ function testUrl(url, callback) {
   img.onerror = function() {
     callback(false);
   };
-  img.src = url;
 }
 
 

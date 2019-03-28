@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require(`${process.env.PWD}/src/Global.js`);
 
-/*---------------------------DATABASE-------------------------------------*/
 
+/*---------------------------DATABASE-------------------------------------*/
 let password = process.env.MONGO_PASS || require(`${process.env.PWD}/src/mongoPass.js`);
 let uri = `mongodb+srv://admin:${password}@cluster0-2fmt7.gcp.mongodb.net/test?retryWrites=true`;
 

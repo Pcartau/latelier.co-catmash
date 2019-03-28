@@ -1,5 +1,5 @@
 /*---------------------------DOM-CREATION------------------------------------*/
-const img_container = document.getElementsByClassName('img_container')[0];
+const container = document.getElementsByClassName('container')[0];
 var catsData = JSON.parse(catsData.replace(/&quot;/g,'"'));
 var catRank = 1;
 
@@ -19,9 +19,9 @@ for (let cat of catsSorted) {
   img.classList.add("cat_img");
   pRank.innerHTML = "#" + catRank;
   pVotes.innerHTML = cat.cat_votes + " vote(s)";
-  img_container.appendChild(img);
-  img_container.appendChild(pRank);
-  img_container.appendChild(pVotes);
+  container.appendChild(img);
+  container.appendChild(pRank);
+  container.appendChild(pVotes);
   catRank += 1;
 }
 //Remplissage dynamique de la div conteneuse des images

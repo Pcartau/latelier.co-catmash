@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const request = require('request');
 const Cat = require(`${process.env.PWD}/src/Cat.js`);
 
-/*---------------------------UTILS-FUNCTIONS----------------------------------*/
+/*---------------------------FILL-DATABASE------------------------------------*/
 function fillDataBase() {
   for (let cat of catsData.images) {
     var newCat = new Cat({
@@ -16,7 +16,8 @@ function fillDataBase() {
   }
 }
 
-/*---------------------------REQUEST-BLOC-------------------------------------*/
+
+/*---------------------------REQUEST-FUNCTION---------------------------------*/
 mongoose.connection.once('open', () => {
   mongoose.connection.db.collection('cats').countDocuments()
     .then(count => {

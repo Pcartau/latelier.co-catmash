@@ -1,5 +1,6 @@
 const Cat = require(`${process.env.PWD}/src/Cat.js`);
 
+/*---------------------------GIVE-A-POINT-TO-CAT-ID---------------------------*/
 function givePoint(id) {
   Cat.findOne({ 'cat_id': id }, "cat_votes", function (err, cat) {
     if (err) return handleError(err);
@@ -10,11 +11,13 @@ function givePoint(id) {
   });
 }
 
+
+/*---------------------------CREATE-MATCH-ARRAY-------------------------------*/
 function createMatchs(cats_number) {
   var catsMatchs = [];
-  for (let i = 0; i < cats_number; i++) {
-    for (let j = i + 1; j < cats_number; j++) {
-      catsMatchs.push(i + ":" + j);
+  for (let firstCat = 0; firstCat < cats_number; firstCat++) {
+    for (let secondCat = firstCat + 1; secondCat < cats_number; secondCat++) {
+      catsMatchs.push(firstCat + ":" + secondCat);
     }
   }
   return (catsMatchs);
